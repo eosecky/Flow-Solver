@@ -2,6 +2,8 @@
 #include "constcontain.h"
 class constantinputs
 {
+
+public:
 	float h;
 	float l;
 	float deltax;
@@ -9,9 +11,8 @@ class constantinputs
 	float viscosity;
 	float vinlet;
 	float pinlet;
-public:
 	constantinputs();
 	~constantinputs();
-	constcontain getinputs();
+	constcontain* getinputs();
 };
 

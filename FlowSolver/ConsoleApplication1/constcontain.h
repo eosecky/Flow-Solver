@@ -1,7 +1,7 @@
 #pragma once
 class constcontain
 {
-public:
+private:
 	float h;
 	float l;
 	float dx;
@@ -9,15 +9,17 @@ public:
 	float viscosity;
 	float vinlet;
 	float pinlet;
-	constcontain();
+
+public:
+	constcontain(float h, float l, float dx, float density, float viscosity, float vinlet, float pinlet);
 	~constcontain();
-	void setl(float);
-	void seth(float);
-	void setdx(float);
-	void setdensity(float);
-	void setviscosity(float);
-	void setvinlet(float);
-	void setpintlet(float);
+	float getH();
+	float getL();
+	float getDx();
+	float getDensity();
+	float getViscosity();
+	float getVinlet();
+	float getPinlet();
 	
 };
 

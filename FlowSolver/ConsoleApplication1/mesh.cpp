@@ -1,25 +1,23 @@
 #include "stdafx.h"
 #include "mesh.h"
 #include "math.h"
+#include "constcontain.h"
 
-mesh::mesh(float l, float h, float dx, float inlet)
+mesh::mesh(constcontain* constin)
 {
-	nl = (int)round(l / dx);
-	nh = (int)round(h / dx);
+	constants = constin;
+	nl = (int)round(constants->getL() / constants->getDx());
+	nh = (int)round(constants->getH() / constants->getDx());
 	domain = new float*[nl];
-	for (int i = 0; i < (nl- 1); i++) {
+	for (int i = 0; i < (nl - 1); i++) {
 		domain[i] = new float[nh];
 	}
 	for (int i = 0; i < nl - 1; i++) {
 		for (int j = 0; j < nh; j++) {
 
-				domain[i][j] = inlet;
-			
+			domain[i][j] = 0;
+
 		}
-	}
-	for (int i = 0; i < (nl - 1); i++) {
-		domain[i][0] = 0;
-		domain[i][nh - 1] = 0;
 	}
 }
 
@@ -27,5 +25,7 @@ mesh::mesh(float l, float h, float dx, float inlet)
 mesh::~mesh()
 {
 }
+
+
 
 

@@ -1,15 +1,19 @@
 #pragma once
+#include "constcontain.h"
+
 class mesh
 {
-	float l;
-	float h;
-	float deltax;
-	int nl;
-	int nh;
+private:
+
+protected:
+	constcontain * constants;
+
 public:
 	float **domain;
-	mesh(float, float, float, float);
+	int nl;
+	int nh;
+	mesh(constcontain*);
 	~mesh();
-	
+
 };
 

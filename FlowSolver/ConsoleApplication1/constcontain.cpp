@@ -2,8 +2,15 @@
 #include "constcontain.h"
 using namespace std;
 
-constcontain::constcontain()
+constcontain::constcontain(float h, float l, float dx, float density, float viscosity, float vinlet, float pinlet)
 {
+	this->h = h;
+	this->l = l;
+	this->dx = dx;
+	this->density = density;
+	this->viscosity = viscosity;
+	this->vinlet = vinlet;
+	this->pinlet = pinlet;
 }
 
 
@@ -11,36 +18,18 @@ constcontain::~constcontain()
 {
 }
 
-void constcontain::setl(float lin)
-{
-	l = lin;
-}
 
-void constcontain::seth(float hin)
-{
-	h = hin;
-}
+float constcontain::getH() { return h; }
 
-void constcontain::setdx(float dxin)
-{
-	dx = dxin;
+float constcontain::getL() { return l; }
+float constcontain::getDx() { return dx; }
+float constcontain::getDensity() { return density; }
+float constcontain::getViscosity() {
+	return viscosity;
 }
-
-void constcontain::setdensity(float densityin)
-{
-	density = densityin;
+float constcontain::getVinlet() {
+	return vinlet;
 }
-void constcontain::setviscosity(float viscin)
-{
-	viscosity = viscin;
-}
-
-void constcontain::setvinlet(float vinletin)
-{
-	vinlet = vinletin;
-}
-
-void constcontain::setpintlet(float pinletin)
-{
-	pinlet = pinletin;
+float constcontain::getPinlet() {
+	return pinlet;
 }
